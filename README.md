@@ -2,8 +2,8 @@
 
 用来爬取链家网中所有厦门市二手网交易信息。
 # 部分结果展示
-
-![]()
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/lianjia_mongo_result.png)
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/web_lianjia_deal.png)
 # 项目说明
 1. 使用scrapy框架来编写爬虫程序。  
 
