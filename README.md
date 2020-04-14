@@ -2,8 +2,27 @@
 
 用来爬取链家网中所有厦门市二手网交易信息。
 # 部分结果展示
-![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/lianjia_mongo_result.png)
-![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/web_lianjia_deal.png)
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/lianjia_mongo_result.png)      
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/web_lianjia_deal.png)     
+
+链家网厦门市2015年6月到2020年3月的二手房交易数量为7866条，交易数量与交易时间的分布如下图所示。   
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/num_time.png)   
+
+月份与交易数量分布图如图所示。
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/month_num.png)         
+分析了2016年4月到2020年3月链家网记录的7214条厦门二手房的交易记录，从户型与交易数量分布图可以看到一年有两个交易的高峰，3月到5月和11月到1月，此外三月是交易的最高峰，2016到2020年3月份的成交数量占记录总数的百分之16.8 ，数量为1214套。   
+
+户型与交易数量分布图如下图所示。   
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/type_num.png)   
+根据链家网厦门市二手房2015年5月到2019年11月的7856条交易数据可知，成交量最多的前三名户型分别是：2室2厅1厨1卫、3室2厅1厨2卫、2室1厅1厨1卫。
+
+不同区域的平均房价如下表所示。    
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/reg_price.png)   
+分析链家网厦门市二手房从2015年5月到2020年4月的7867条交易数据来看，岛内的房价远高于岛外的房价，岛内思明区的房价最高；岛外，海沧区和集美区的房价相差不大，高于同安区的房价，而同安区的房价又高于翔安区的房价。   
+
+不同区域、不同产权属性的平均房价如下表所示。   
+![](https://github.com/cyhleo/LianJiaDeal/blob/master/image/pro_price.png)    
+对于思明、湖里、集美、翔安、海沧，皆为别墅房价>普通住宅房价>商业办公类房价。   
 # 项目说明
 1. 使用scrapy框架来编写爬虫程序。  
 
@@ -39,6 +58,7 @@
 14. 使用scrapy_redis内置调度器类和请求去重类，使用redis集合作为消息队列数据结构，使用redis列表作为请求指纹存储的数据结构。    在settings中设置SCHEDULER = 'scrapy_redis.scheduler.Scheduler'，DUPEFILTER_CLASS = 'scrapy_redis.dupefilter.RFPDupeFilter'， SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.FifoQueue'。
 在settings中设置REDIS_HOST、REDIS_PORT、REDIS_PASSWORD值（请求队列和去重指纹队列存储使用的redis数据库info）。
 
+15. 使用pandas和matplotlib库对爬取数据进行分析，分析过程详见scond_deal_lianjia_2020_4_11.ipynb。
 
 # 告示
 本代码仅作学习交流，切勿用于商业用途。如涉及侵权，会尽快删除。
