@@ -42,3 +42,4 @@ class SpiderErrorFile(object):
         if isinstance(item,SpiderErrorItem):
             self.file.write(item)
             self.file.write('\n')
+        return item
